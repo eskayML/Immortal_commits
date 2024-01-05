@@ -13,11 +13,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Training pipeline
-      run: |
-      python scraper.py
-      python cleaning.py
-      python preprocessing.py
-      python trainer.py
+      run: echo "." >> commit.txt
 
     - name: Commit changes
       run: |
