@@ -12,8 +12,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Update text file
-      run: echo '.' >> commit.txt
+    - name: Training pipeline
+      run: |
+      python scraper.py
+      python cleaning.py
+      python preprocessing.py
+      python trainer.py
 
     - name: Commit changes
       run: |
