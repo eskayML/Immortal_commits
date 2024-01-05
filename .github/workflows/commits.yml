@@ -1,0 +1,24 @@
+name: Periodic Commit
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Update text file
+      run: echo '.' >> commit.txt
+
+    - name: Commit changes
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add commit.txt
+        git commit -m "Automated commit: Add 'Immortal commit :) ' "
+        git push
