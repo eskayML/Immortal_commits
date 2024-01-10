@@ -17,8 +17,8 @@ jobs:
 
     - name: Commit changes
       run: |
-        git config user.name "GitHub Actions"
-        git config user.email "actions@github.com"
+        git config user.name "eskayML"
+        git config user.email "kalusam619@gmail.com"
         git add .
         git commit -m "Automated commit :) ' "
         git push
